@@ -61,9 +61,6 @@ class _RecipeListPagesState extends State<RecipeListPages> with WidgetsBindingOb
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.categoryName),
-        actions: const [
-          FavouriteAppbarButton()
-        ],
       ),
       body: BlocBuilder<RecipeListBloc, RecipeListState>(
         builder: (context, state) {

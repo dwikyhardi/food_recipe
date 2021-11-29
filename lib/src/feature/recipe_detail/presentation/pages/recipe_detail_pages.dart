@@ -32,9 +32,6 @@ class _RecipeDetailPagesState extends State<RecipeDetailPages> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Recipe'),
-        actions: const [
-          FavouriteAppbarButton()
-        ],
       ),
       body: BlocBuilder<RecipeDetailBloc, RecipeDetailState>(
         builder: (BuildContext buildContext, RecipeDetailState state) {

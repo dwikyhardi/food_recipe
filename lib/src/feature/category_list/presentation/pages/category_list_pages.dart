@@ -28,8 +28,21 @@ class _CategoryListPagesState extends State<CategoryListPages> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Recipe Category List'),
-        actions: const [
-          FavouriteAppbarButton()
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: InkWell(
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
+              onTap: () {
+                BlocProvider.of<CategoryListBloc>(context)
+                    .add(OpenFavouriteRecipeListEvent(buildContext: context));
+              },
+              child: const Icon(
+                Icons.favorite,
+                color: CupertinoColors.inactiveGray,
+              ),
+            ),
+          )
         ],
       ),
       body: _buildBody(),
